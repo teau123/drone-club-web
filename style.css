@@ -1,0 +1,200 @@
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #161616;
+    --text-color: #e0e0e0;
+    --neon-primary: #00ff9d; /* เขียวนีออน */
+    --neon-secondary: #00d2ff; /* ฟ้านีออน */
+    --font-head: 'Orbitron', sans-serif; /* ฟอนต์แนว Sci-fi */
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(10, 10, 10, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover, .active-link {
+    color: var(--neon-primary);
+    text-shadow: 0 0 10px var(--neon-primary);
+}
+
+/* Utilities */
+.neon-text {
+    color: var(--neon-primary);
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: var(--font-head);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn-neon {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: transparent;
+    border: 2px solid var(--neon-secondary);
+    color: var(--neon-secondary);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.btn-neon:hover {
+    background: var(--neon-secondary);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-secondary);
+}
+
+/* Calculator Section */
+.calculator-section {
+    padding: 80px 20px;
+    background-color: #0f0f0f;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.calc-box {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 1px solid #333;
+    box-shadow: 0 0 30px rgba(0, 255, 157, 0.05);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: #222;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--neon-primary);
+}
+
+.btn-calc {
+    width: 100%;
+    padding: 15px;
+    background: var(--neon-primary);
+    border: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.btn-calc:hover {
+    background: #00e08b;
+    box-shadow: 0 0 15px var(--neon-primary);
+}
+
+/* Result Area */
+.result {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    animation: fadeIn 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.neon-number {
+    font-size: 2rem;
+    color: var(--neon-secondary);
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+    text-shadow: 0 0 10px var(--neon-secondary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .nav-links { display: none; } /* ซ่อนเมนูสำหรับตัวอย่าง */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

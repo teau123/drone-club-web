@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics & Drone Club | University Name</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ROBO<span class="neon-text">DRONE</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">หน้าหลัก</a></li>
+            <li><a href="#about">เกี่ยวกับเรา</a></li>
+            <li><a href="#calculator" class="active-link">คำนวณการบิน</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>อนาคตแห่ง<span class="neon-text">เวหา</span>และ<span class="neon-text">ปัญญาประดิษฐ์</span></h1>
+            <p>ร่วมสร้างสรรค์นวัตกรรมหุ่นยนต์และโดรนไปกับเรา ชมรมสำหรับนักพัฒนารุ่นใหม่</p>
+            <a href="#calculator" class="btn-neon">ทดลองคำนวณ Flight Time</a>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2>Drone Flight Time <span class="neon-text">Calculator</span></h2>
+            <p>ประเมินระยะเวลาการบินของโดรนตามสเปกแบตเตอรี่ของคุณ</p>
+            
+            <div class="calc-box">
+                <div class="input-group">
+                    <label for="batteryCap">ความจุแบตเตอรี่ (mAh)</label>
+                    <input type="number" id="batteryCap" placeholder="เช่น 2200" min="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="motorAmp">กระแสที่มอเตอร์ดึงเฉลี่ย (Amps)</label>
+                    <input type="number" id="motorAmp" placeholder="เช่น 15" min="0">
+                </div>
+
+                <button onclick="calculateFlightTime()" class="btn-calc">คำนวณเวลาบิน</button>
+
+                <div id="resultArea" class="result hidden">
+                    <h3>ผลลัพธ์โดยประมาณ</h3>
+                    <p>บินได้นานสูงสุด: <span id="flightTime" class="neon-number">0</span> นาที</p>
+                    <small>*หมายเหตุ: ควรเผื่อเวลาลงจอดเมื่อแบตเหลือ 20% (Safe Margin)</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Robotics & Drone Club. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
